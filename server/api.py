@@ -46,5 +46,5 @@ class CounterSerializer(serializers.HyperlinkedModelSerializer):
 
 # ViewSets define the view behavior.
 class CounterViewSet(viewsets.ModelViewSet):
-    queryset = Plug.objects.all()
+    queryset = Counter.objects.all()
     serializer_class = CounterSerializer
