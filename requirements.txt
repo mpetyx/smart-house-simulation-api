@@ -3,3 +3,4 @@ djangorestframework
 markdown
 django-filter
 pymodbus
+minimalmodbus
