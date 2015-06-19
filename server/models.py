@@ -33,3 +33,12 @@ class Counter(Buffer):
     voltage = models.OneToOneField(Value,related_name="6")
     ampere = models.OneToOneField(Value,related_name="7")
     pf = models.OneToOneField(Value,related_name="8")
+
+class Building(models.Model):
+    pass
+
+class ElectriCar(models.Model):
+    pass
+
+class StreetLighting(models.Model):
+    pass

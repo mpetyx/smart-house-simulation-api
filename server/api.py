@@ -31,7 +31,7 @@ class PlugViewSet(viewsets.ModelViewSet):
 class SensorSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Sensor
-        fields = (['description'])
+        fields = ('description','id','label')
 
 # ViewSets define the view behavior.
 class SensorViewSet(viewsets.ModelViewSet):
