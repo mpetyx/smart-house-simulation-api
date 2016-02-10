@@ -1,7 +1,7 @@
-django
-djangorestframework
-markdown
-django-filter
+#django
+#djangorestframework
+#markdown
+#django-filter
 pymodbus
-minimalmodbus
-gunicorn
+#minimalmodbus
+#gunicorn
