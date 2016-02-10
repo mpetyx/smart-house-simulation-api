@@ -21,41 +21,44 @@ import pprint
 # client.close()
 
 def check_register(regIndex):
-    client = ModbusClient(host='143.233.186.1', port=502)
+    client = ModbusClient(host='147.102.6.208', port=502)
     client.connect()
-    # result = client.read_holding_registers(regIndex, 1, unit=1)
-    result = client.read_coils(52,1)
+    result = client.read_holding_registers(regIndex, 1, unit=1)
+    # result = client.read_coils(52,1)
     print result
     pprint.pprint(result.registers)
-    print hex(result.registers[0])
+    # print hex(result.registers[0])
     client.close()
 
-client = ModbusClient(host='143.233.186.1', port=502)
+client = ModbusClient(host='147.102.6.208', port=502)
 client.connect()
 
 # Read All Values
-# for i in range(93,96,1):
-#
-#     input_register = client.read_input_registers(i, 1, unit=1)
-#     holding_register = client.read_holding_registers(i, 1, unit=1)
-#
-#     if input_register.function_code < 0x80:
-#         print "Value on input_register:"
-#         print i
-#         print hex(i)
-#         pprint.pprint(input_register.registers)
-#         # break
-#         print
-#     if holding_register.function_code < 0x80:
-#         print "Value on holding_register:"
-#         print i
-#         print hex(i)
-#         pprint.pprint(holding_register.registers)
-#         # break
-#         print
+for i in range(93,96,1):
+
+    input_register = client.read_input_registers(i, 1, unit=1)
+    holding_register = client.read_holding_registers(i, 1, unit=1)
+
+    if input_register.function_code < 0x80:
+        print "Value on input_register:"
+        print i
+        print hex(i)
+        pprint.pprint(input_register.registers)
+        # break
+        print
+    if holding_register.function_code < 0x80:
+        print "Value on holding_register:"
+        print i
+        print hex(i)
+        pprint.pprint(holding_register.registers)
+        # break
+        print
 
 
-write_holding_register = client.write_register(56, 1 , unit=1)
-print write_holding_register
+# write_holding_register = client.write_register(95, int(250), unit=1 )
+# print write_holding_register
 
 
+
+# check_register(52)
+# 30046
